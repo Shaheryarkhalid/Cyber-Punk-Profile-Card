@@ -1,0 +1,102 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap);
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+.Main-Section{
+    height: 100vh;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #020414;
+}
+.Main-Section .Profile-Card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    z-index: 100;
+}
+.Main-Section .Profile-Card::before{
+    height: 280px;
+    width:230px;
+    position: absolute;
+    bottom:-2px;
+    left: -2px;
+    content: "";
+    background-image: linear-gradient(-140deg, transparent , var(--Color-Below) );
+    box-shadow: -10px 10px 100px 10px  var(--Color-Below);
+    z-index: -3;
+}
+.Main-Section .Profile-Card::after{
+    height: 280px;
+    width:230px;
+    position: absolute;
+    top:-2px;
+    right: -2px;
+    content: ""; background-image: linear-gradient(50deg, transparent, var(--Color-Up));
+    box-shadow: -10px 10px 100px 10px  var(--Color-Up);
+    z-index: -3;
+}
+.Main-Section .Profile-Card .ineer{
+    background-color: #14172e;
+    padding: 10px;
+    position: relative;
+}
+.Main-Section .Profile-Card .ineer:after{
+    position: absolute;
+    top:0;
+    content: "";
+    background-color: rgba(0,0, 0, 0.3);
+    height: 100%;
+    width:50%;
+    transition: all 0.5s linear;
+}
+.Main-Section .Profile-Card img{
+    object-fit: cover;
+    opacity: 0.5;
+    
+    transition: 0.5s ease;
+}
+.Main-Section .Profile-Card .Details{
+    background-color: #0b0b19;
+    padding: 20px;
+    margin-top: 10px;
+    width:100%;
+}
+.Main-Section .ineer{
+    height:320px;
+    transition: all 0.3s linear;
+    transition-delay: 0.3s;
+}
+.Main-Section .ineer .Details{
+    opacity: 0;
+    height:0px;
+    padding: 0;
+    transition: all 0.5s linear,;
+}
+.Main-Section .Profile-Card:hover .ineer{
+    height: 430px;
+    transition: 0.3s linear;
+}
+.Main-Section .Profile-Card:hover .Details{
+    opacity: 1;
+    height:auto;
+    padding: 20px;
+    transition: all 0.5s linear,opacity 0.1s ease;
+    transition-delay: 0.5s;
+}
+.Main-Section .Profile-Card:hover .ineer::after{
+    background-color: transparent;
+    transition: all 0.3s linear;
+}
+
+.Main-Section .Profile-Card:hover img{
+    opacity: 1;
+    transition: 0.5s ease;
+}
